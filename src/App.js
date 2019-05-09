@@ -12,10 +12,12 @@ const App = () => {
 }
 
 const Square = (props) => {
-  const [gotClicked, setGotClicked] = useState(null)
   return (
-    <button className="square" onClick={() => setGotClicked('X')}>
-      {gotClicked}
+    <button 
+		  className="square" 
+			onClick={() => props.onClick()}
+		>
+      {props.value}
     </button>
   );
 }
@@ -23,8 +25,19 @@ const Square = (props) => {
 const Board = () => {
   const [squares, setSquares] = useState(Array(9).fill(null))
 
+  const handleClick = (i) => {
+    const theSquares = squares.slice();
+		theSquares[i] = 'X';
+    setSquares(theSquares);
+  }
+
   const renderSquare = (i) => {
-    return <Square value={squares[i]} />
+    return (
+		  <Square 
+			  value={squares[i]} 
+				onClick={() => handleClick(i)}
+		  />
+		)
   }
 
   const status = 'Next player: X';
