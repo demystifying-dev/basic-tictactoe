@@ -12,8 +12,10 @@ const App = () => {
 }
 
 const Square = (props) => {
+  const alertstring = "You clicked " + props.value
+  console.log('as', alertstring)
   return (
-    <button className="square">
+    <button className="square" onClick={() => alert(alertstring)}>
       {props.value}
     </button>
   );
