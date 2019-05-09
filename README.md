@@ -1,3 +1,14 @@
+# This repo
+
+The purpose of this repo is to present the official React Tutorial:
+
+* Going through all the steps taken in the official docs
+* But with React Hooks
+
+Modern, like
+
+# From create-react-app
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
