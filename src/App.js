@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 
 const App = () => {
@@ -12,11 +12,10 @@ const App = () => {
 }
 
 const Square = (props) => {
-  const alertstring = "You clicked " + props.value
-  console.log('as', alertstring)
+  const [gotClicked, setGotClicked] = useState(null)
   return (
-    <button className="square" onClick={() => alert(alertstring)}>
-      {props.value}
+    <button className="square" onClick={() => setGotClicked('X')}>
+      {gotClicked}
     </button>
   );
 }
