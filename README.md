@@ -1,11 +1,11 @@
-# This repo
+# Demystifying React - The official tictactoe React Tutorial completely converted to easy function components
 
 The purpose of this repo is to present the [official React Tutorial](https://reactjs.org/tutorial/tutorial.html):
 
 * Going through all the steps taken in the official docs (here accessible as branches)
 * But with React Hooks and function components
 
-Modern, like
+Modern, like. Dead easy.
 
 # From create-react-app
 
