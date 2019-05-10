@@ -24,11 +24,14 @@ const Square = (props) => {
 
 const Board = () => {
   const [squares, setSquares] = useState(Array(9).fill(null))
+  const [xIsNext, setXIsNext] = useState(false)
 
   const handleClick = (i) => {
     const theSquares = squares.slice();
 		theSquares[i] = 'X';
+		theSquares[i] = xIsNext ? 'X' : 'O';
     setSquares(theSquares);
+    setXIsNext(!xIsNext);
   }
 
   const renderSquare = (i) => {
@@ -40,7 +43,7 @@ const Board = () => {
 		)
   }
 
-  const status = 'Next player: X';
+	const status = 'Next player: ' + (xIsNext ? 'X' : 'O');
 
   return (
     <div>
