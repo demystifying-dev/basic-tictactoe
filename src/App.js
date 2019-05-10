@@ -24,7 +24,7 @@ const Square = (props) => {
 
 const Board = () => {
   const [squares, setSquares] = useState(Array(9).fill(null))
-  const [xIsNext, setXIsNext] = useState(false)
+  const [xIsNext, setXIsNext] = useState(true)
 
   const handleClick = (i) => {
     const theSquares = squares.slice();
