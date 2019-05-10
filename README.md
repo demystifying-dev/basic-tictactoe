@@ -7,6 +7,8 @@ The purpose of this repo is to present the [official React Tutorial](https://rea
 
 Modern, like. Dead easy.
 
+It's been done before, but no-one has done it in pedagogical steps, and the conversion is our own, preferred version.
+
 # From create-react-app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
