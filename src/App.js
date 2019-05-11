@@ -60,23 +60,34 @@ const Game = () => {
     }],
   )
   const [xIsNext, setXIsNext] = useState(true)
+  const [stepNumber, setStepNumber] = useState(0)
   const handleClick = (i) => {
-    const current = history[history.length - 1];
+    // console.log('history start', history)
+    const uptillnow = history.slice(0, stepNumber + 1);
+    // console.log('uptillnow', uptillnow)
+    const current = uptillnow[uptillnow.length - 1];
     const squares = current.squares.slice();
     if (calculateWinner(squares) || squares[i]) {
       return;
     } 
     squares[i] = xIsNext ? 'X' : 'O';
     setHistory(
-      history.concat([{
+      uptillnow.concat([{
         squares: squares
       }])
     );
+		setStepNumber(uptillnow.length);
     setXIsNext(!xIsNext);
-    // console.log('history', history)
+    // console.log('history finish', history)
   }
 
-  const current = history[history.length - 1];
+  const jumpTo = (step) => {
+	  // console.log('step', step);
+    setStepNumber(step)
+    setXIsNext((step % 2) === 0)
+  }
+
+  const current = history[stepNumber];
   const winner = calculateWinner(current.squares);
   const moves = history.map((step, move) => {
     const desc = move ?
@@ -84,7 +95,7 @@ const Game = () => {
       'Go to game start';
     return (
       <li key={move}>
-        <button onClick={() => this.jumpTo(move)}>{desc}</button>
+        <button onClick={() => jumpTo(move)}>{desc}</button>
       </li>
     );
   });
